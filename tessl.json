@@ -1,0 +1,9 @@
+{
+  "name": "my-project",
+  "mode": "vendored",
+  "dependencies": {
+    "pantheon-ai/test-driven-development": {
+      "version": "0.2.4"
+    }
+  }
+}
