@@ -141,9 +141,9 @@ The detailed local evidence consists of the decision-roster report, aggregate
 pilot, grading-reliability audit, and portfolio analysis. Those raw benchmark
 artifacts and model responses are intentionally kept in the sibling evaluation
 workspace rather than bundled into the portable skill. The claims retained
-here are the conservative conclusions that survived those audits; rerun the
-bundled eval cases before changing the roster or promoting the pilot to a
-permanent ranking.
+here are the conservative conclusions that survived those audits; validate
+against independently authored synthetic cases before changing the roster or
+promoting the pilot to a permanent ranking.
 
 ### What the pilot does and does not justify
 

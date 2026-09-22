@@ -127,8 +127,8 @@ effectiveness is established; retain the separate medical safety workflow.
 The underlying evaluation inputs, transcripts, identity maps, and local result
 paths are intentionally excluded from this public distribution. The numerical
 summaries above describe limited prior observations, not an independently
-reproduced public benchmark or an execution prerequisite. Use the bundled
-synthetic cases and independent local validation before changing these defaults.
+reproduced public benchmark or an execution prerequisite. Use independently
+authored synthetic cases and local validation before changing these defaults.
 
 The model names and effort settings above are requested configuration. Retain
 the existing per-adapter identity checks; a request pin or offline test is not

@@ -534,8 +534,9 @@ before any broader ranking or default-seat promotion.
 
 Medical performance requires a separate synthetic or fully de-identified set,
 current authoritative sources, clinician grading, and non-compensable
-emergency/medication/privacy hard-fail gates. Use
-`evals/medical-safety-cases.json` as a safety-routing bank, not proof of clinical
+emergency/medication/privacy hard-fail gates. Keep evaluation inputs outside
+the public skill distribution. Independently authored synthetic cases with
+reviewed provenance can validate safety routing, but do not establish clinical
 outcome performance.
 
 See `references/research-notes.md` for the official CLI sources and debate-design evidence behind this protocol.

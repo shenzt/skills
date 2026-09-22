@@ -1,0 +1,2 @@
+# Keep local evaluation datasets out of the public skill distribution.
+/skills/multi-model-discussion/evals/
