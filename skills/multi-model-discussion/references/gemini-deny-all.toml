@@ -1,0 +1,6 @@
+[[rule]]
+toolName = "*"
+decision = "deny"
+priority = 999
+interactive = false
+denyMessage = "Model-council participants must return analysis without using tools."

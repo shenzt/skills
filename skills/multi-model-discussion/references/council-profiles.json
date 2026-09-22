@@ -1,0 +1,161 @@
+{
+  "schema_version": 1,
+  "default_profile": "general",
+  "implicit_cli_profile": "legacy",
+  "priority": [
+    "codex",
+    "kimi",
+    "glm",
+    "claude",
+    "qwen",
+    "gemini-flash",
+    "deepseek",
+    "gemini"
+  ],
+  "profiles": {
+    "quick": {
+      "total_seats": 2
+    },
+    "general": {
+      "total_seats": 3,
+      "priority": [
+        "codex-astra",
+        "claude",
+        "glm",
+        "kimi",
+        "qwen",
+        "gemini-flash",
+        "deepseek",
+        "gemini"
+      ]
+    },
+    "critical": {
+      "total_seats": 5,
+      "priority": [
+        "codex-astra",
+        "claude",
+        "glm",
+        "deepseek-flash",
+        "kimi",
+        "qwen",
+        "gemini-flash",
+        "deepseek",
+        "gemini"
+      ],
+      "requires_validated_host_position": true,
+      "health_gate": {
+        "minimum_effective_families": 4,
+        "minimum_effective_transports": 3
+      }
+    },
+    "legacy": {
+      "total_seats": 3,
+      "participants": [
+        "claude",
+        "codex",
+        "gemini"
+      ]
+    }
+  },
+  "participants": {
+    "codex-astra": {
+      "adapter": "codex",
+      "model": "gpt-6-astra",
+      "variant": "max",
+      "reasoning_effort": "max",
+      "provider_family": "openai",
+      "transport_domain": "chatgpt-codex",
+      "role": "Integrate evidence into an executable, constraint-aware plan and make decision boundaries explicit."
+    },
+    "codex": {
+      "adapter": "codex",
+      "model": "gpt-5.6-sol",
+      "variant": "max",
+      "reasoning_effort": "max",
+      "provider_family": "openai",
+      "transport_domain": "chatgpt-codex",
+      "role": "Integrate the decision into an executable, constraint-aware plan."
+    },
+    "kimi": {
+      "adapter": "opencode",
+      "model": "alibaba-cn/kimi/kimi-k3",
+      "variant": "max",
+      "reasoning_effort": "max",
+      "provider_family": "moonshot",
+      "transport_domain": "alibaba-cn",
+      "role": "Challenge framing assumptions and test counterfactual paths."
+    },
+    "glm": {
+      "adapter": "opencode",
+      "model": "zhipuai/glm-5.3",
+      "variant": "max",
+      "reasoning_effort": "max",
+      "provider_family": "zhipu",
+      "transport_domain": "zhipuai",
+      "role": "Audit constraints, implementation details, and overlooked edge cases. Where relevant, verify authorization, tenant isolation, state consistency, rollback, and failure-injection checks."
+    },
+    "claude": {
+      "adapter": "claude",
+      "model": "claude-fable-5-1",
+      "variant": "max",
+      "reasoning_effort": "max",
+      "provider_family": "anthropic",
+      "transport_domain": "anthropic-claude-code",
+      "role": "Synthesize evidence and expose long-horizon or second-order risks."
+    },
+    "claude-fable-5-fallback": {
+      "adapter": "claude",
+      "model": "claude-fable-5",
+      "variant": "max",
+      "reasoning_effort": "max",
+      "provider_family": "anthropic",
+      "transport_domain": "anthropic-claude-code",
+      "role": "Provide an explicit rollback path to the prior Fable 5 route without entering a default council profile."
+    },
+    "qwen": {
+      "adapter": "opencode",
+      "model": "alibaba-cn/qwen3.8-max",
+      "variant": "xhigh",
+      "reasoning_effort": "xhigh",
+      "provider_family": "alibaba",
+      "transport_domain": "alibaba-cn",
+      "role": "Stress-test technical feasibility and propose concrete alternatives."
+    },
+    "gemini-flash": {
+      "adapter": "opencode",
+      "model": "google/gemini-3.7-flash",
+      "variant": "high",
+      "reasoning_effort": "high",
+      "provider_family": "google",
+      "transport_domain": "google",
+      "role": "Scan the option space quickly and identify missing branches."
+    },
+    "deepseek": {
+      "adapter": "opencode",
+      "model": "deepseek/deepseek-v4-pro",
+      "variant": "max",
+      "reasoning_effort": "max",
+      "provider_family": "deepseek",
+      "transport_domain": "deepseek",
+      "role": "Act as an adversarial reviewer of failure modes, cost, and reversibility."
+    },
+    "deepseek-flash": {
+      "adapter": "deepseek-http",
+      "model": "deepseek-flash",
+      "variant": "max",
+      "reasoning_effort": "max",
+      "provider_family": "deepseek",
+      "transport_domain": "deepseek-official-api",
+      "role": "Work through concrete solution paths, independently check calculations, and compare feasible alternatives with explicit assumptions and verification steps. Do not treat an internally consistent plan as proof that privacy, authorization, or rollback boundaries are safe."
+    },
+    "gemini": {
+      "adapter": "gemini",
+      "model": "gemini-3.1-pro-preview",
+      "variant": "high",
+      "reasoning_effort": "high",
+      "provider_family": "google",
+      "transport_domain": "google-gemini-cli",
+      "role": "Provide the legacy council's independent multimodal-oriented critique."
+    }
+  }
+}
